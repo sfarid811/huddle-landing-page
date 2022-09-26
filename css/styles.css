@@ -1,0 +1,271 @@
+/*===== GOOGLE FONTS =====*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+
+  /*========== Colors ==========*/
+  --icon-color: hsl(322, 100%, 66%);
+ 
+
+  /*========== Font and typography ==========*/
+  --body-font: 'Poppins', sans-serif;
+  --biggest-font-size: 2.25rem;
+  --body-copy : 1.125;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== Margenes ==========*/
+  --mb-1: .5rem;
+  --mb-2: 1rem;
+  --mb-3: 1.5rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px){
+  :root{
+    --biggest-font-size: 4rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*========== BASE ==========*/
+*,::before,::after{
+  padding: 0; 
+  margin: 0; 
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+
+body{
+  /* margin: var(--mb-5) var(--mb-3) var(--mb-5) var(--mb-3); */
+  font-family: var(--body-font);
+  font-size: var(--body-copy);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,h2,h3,p,ul{
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+.bd-grid {
+  display: grid;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+/*========== LAYOUT ==========*/
+.bd-container{
+  max-width: 960px;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+.footer__container {
+  max-width: 1500px;
+  width: calc(100% - 2rem);
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+}
+@media screen and (min-width: 960px){
+  .bd-container, .footer__container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+/* Section */
+
+.section-title{
+  text-align: center;
+}
+
+.section-title h1 {
+  font-size: 24px;
+  padding: 0 1rem;
+  margin: var(--mb-6) 0;
+  color: hsl(192, 100%, 9%);
+}
+
+.pink-button {
+  background-color: hsl(322, 100%, 66%);
+  color:hsl(193, 100%, 96%);
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  margin: var(--mb-4) 0;
+  text-align: center;
+}
+.section-title p {
+  font-size: 18px;
+  color: #374151;
+}
+/* Header */
+
+ .section {
+  background-image: url(../images/bg-hero-mobile.svg);
+  background-repeat: no-repeat;
+  background-color: hsl(193, 100%, 96%);
+  /* height: 100vh; */
+} 
+
+.nav {
+  padding: 1rem .5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 10rem;
+  /* width: 160px; Equivalent*/
+}
+
+.nav__link {
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 24px;
+  padding: 0.5rem;
+  text-align: center;
+  min-width: 7rem;
+  font-weight: 600;
+  box-shadow: 3px 5px 10px rgb(0 0 0 / 10%);
+}
+
+
+.right-banner {
+  margin-top: var(--mb-4);
+  width: 85vw;
+  place-self: center;
+  /* justify-self: center;
+  align-self: center; */
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {
+  .banner {
+    margin-top: var(--mb-6);
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 100px;
+  }
+  .article__data  {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+    box-shadow: 3px 5px 15px rgb(0 0 0 / 10%);
+    margin: var(--mb-6) 0;
+    padding: var(--mb-6);
+    border-radius: 16px;
+
+  }
+  .conversation-image {
+    order: -1;
+  }
+  .article-title  {
+   text-align: none;
+  }
+  .section-title{
+    text-align: initial;
+   
+  }
+  .section-title h1 {
+    font-size: 32px;
+    margin-bottom: 25px;
+    padding: 0;
+  }
+  .section-title p {
+    font-size: 17px;
+    color: #6B7280;
+  }
+}
+/* Set the height to 100 view port */
+@media screen and (max-width: 768px) {
+  .section {
+    height: 100vh;
+  }
+ 
+}
+/* Change the hero image for desktop */
+@media screen and (min-width: 1024px) {
+  .section {
+    background-image: url('../images/bg-hero-desktop.svg');
+  }
+}
+
+.newsletter__data {
+  box-shadow: 3px 5px 15px rgb(0 0 0 / 10%);
+  border-radius: 16px;
+  padding: var(--mb-3);
+  text-align: center;
+}
+.newsletter__data h1 {
+  font-size: 24px;
+}
+.pink-button-newsletter {
+  background-color: hsl(322, 100%, 66%);
+  color:hsl(193, 100%, 96%);
+  width: 300px;
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  margin: var(--mb-4) 0;
+  text-align: center;
+}
+
+/* Footer */
+
+#footer {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
